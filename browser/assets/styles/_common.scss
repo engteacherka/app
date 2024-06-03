@@ -1,0 +1,17 @@
+.container {
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.warning {
+  color: red;
+  font-size: 1.15rem;
+  padding: 5px 0;
+}

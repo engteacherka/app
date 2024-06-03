@@ -1,0 +1,6 @@
+@mixin button ($width, $height) {
+    width: $width;
+    height: $height;
+
+    @extend %button;
+}
