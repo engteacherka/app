@@ -1,0 +1,95 @@
+@import "../../../../assets/styles/index.scss";
+
+.navigation{
+  font-family: "Roboto", sans-serif;
+
+
+  .container{
+    height: 15vh;
+  }
+
+  &__list{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+    gap: 50px;
+    height: 100%;
+    font-size: 1.5rem;
+    width: fit-content;
+    margin: 0 auto;
+    text-wrap: nowrap;
+  }
+
+  .fa-solid.fa-bars{
+    display: none;
+  }
+
+  .fa-solid.fa-xmark{
+    display: none;
+  }
+
+  &__link{
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease;
+
+    &:hover{
+      color: $clr-secondary;
+    }
+
+    &:active{
+      color: $clr-primary;
+    }
+
+  }
+}
+
+@include laptop{
+  .navigation{
+    &__list{
+      gap: 20px;
+    }
+  }
+}
+@include tablet{
+  .navigation{
+    .container{
+      height:fit-content;
+    }
+
+    .fa-solid.fa-bars{
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 20px 40px;
+      font-size: 2rem;
+    }
+    &__list{
+      flex-direction: column;
+      display: none;
+      background-color: $clr-primary;
+      height: 100vh;
+      min-width: 30vw;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 5;
+    }
+
+    &__list_opened{
+      display: flex;
+
+      .fa-solid.fa-xmark{
+        display: block;
+        padding-top: 20px;
+        font-size: 2rem;
+      }
+    }
+
+    &__item{
+      padding: 20px;
+    }
+  }
+}

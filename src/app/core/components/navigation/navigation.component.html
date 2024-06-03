@@ -1,0 +1,19 @@
+<nav class="navigation">
+  <div class="container">
+
+    <ul class="navigation__list" [class.navigation__list_opened]="isMenuOpen">
+      <i (click)="toggleMenu()" class="fa-solid fa-xmark"></i>
+      <li class="navigation__item"><a routerLink="" fragment="advantages" class="navigation__link">Про мене</a> </li>
+      <li class="navigation__item"><a routerLink="" fragment="carousel" class="navigation__link">Фрагменти уроків</a>
+      </li>
+      <li class="navigation__item"><a routerLink="" fragment="reviews" class="navigation__link">Відгуки</a>
+      </li>
+      <li class="navigation__item"><a routerLink="" fragment="formats" class="navigation__link">Формати</a>
+      </li>
+      <li class="navigation__item"><a routerLink="" fragment="faq" class="navigation__link">Часті питання</a>
+      </li>
+    </ul>
+    <i (click)="toggleMenu()" class="fa-solid fa-bars"></i>
+
+  </div>
+</nav>

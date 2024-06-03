@@ -1,0 +1,25 @@
+<div class="questions">
+  <div class="container">
+    <h2 class="questions__heading">Часті запитання</h2>
+
+    <div class="box">
+
+      @for( text of textArray; track text.heading; let index = $index){
+        <div class="questions__text text" (click)="toggleParagraph(index)"
+        [ngClass]="textArray[index].isParagraphVisible ?'questions__text_open' :'questions__text_close' ">
+
+          <div class="text__heading-box">
+            <h3 class="questions__text-heading">{{text.heading}}</h3>
+            <i class="fa-solid fa-plus"
+            [ngClass]="textArray[index].isParagraphVisible ? 'rotate-open' : 'rotate-close' "></i>
+          </div>
+
+          <p class="questions__paragraph"
+             [ngClass]="textArray[index].isParagraphVisible ?'questions__paragraph_open' :'questions__paragraph_close' ">
+           {{text.paragraph}}</p>
+        </div>
+      }
+
+    </div>
+  </div>
+</div>

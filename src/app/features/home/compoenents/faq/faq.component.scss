@@ -1,0 +1,143 @@
+@import "../../../../../assets/styles/index.scss";
+
+.questions{
+  min-height: 100vh;
+
+  .box{
+   flex-direction: column;
+   gap: 50px;
+    max-width: fit-content;
+    align-items: start;
+    margin: 0 auto 50px;
+  }
+
+  &__heading{
+  @extend %main-heading;
+  margin: 0 auto;
+  padding: 30px 0;
+  }
+
+  &__text{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 65vw;
+    border: 1px solid #858585;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover{
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);}
+  }
+
+  &__paragraph_open{
+    animation: open 0.5s forwards;
+  }
+
+  &__paragraph_close{
+    animation: close 0.5s forwards;
+  }
+
+  &__text-heading{
+    @extend %heading;
+    display: inline-block;
+  }
+
+  .text__heading-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+
+    .fa-solid.fa-plus{
+      font-size: 3rem
+    }
+
+    .fa-solid.fa-plus.rotate-open{
+      animation: rotate-open 0.5s forwards;
+    }
+
+    .fa-solid.fa-plus.rotate-close{
+      animation: rotate-close 0.5s forwards;
+    }
+
+  }
+
+
+  &__paragraph{
+    @extend %description;
+    overflow-y: hidden;
+    height: 0;
+    opacity: 0;
+  }
+
+}
+
+@include mobile{
+  .questions{
+    padding-bottom: 50px;
+    .box{
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    &__text{
+      width: 90vw;
+      gap: 10px;
+    }
+
+    &__text-heading{
+      font-size: 1rem;
+    }
+  }
+}
+
+@keyframes open {
+  0%{
+    height: 0;
+    opacity: 0;
+  }
+  100%{
+    height: 50px;
+    opacity: 1;
+  }
+
+}
+
+@keyframes close {
+  0%{
+    height: 50px;
+    opacity: 1;
+  }
+  100%{
+    height: 0px;
+    opacity: 0;
+  }
+
+}
+
+@keyframes rotate-open {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(45deg);
+  }
+
+}
+
+@keyframes rotate-close {
+  0%{
+    transform: rotate(45deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+
+}
+

@@ -1,0 +1,88 @@
+@import "../../../../../assets/styles/index.scss";
+
+.carousel{
+  height: 100vh;
+  position: relative;
+  background-color: $clr-primary;
+
+  &__heading{
+    @extend %main-heading;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+
+  &-box{
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+
+    &::before{
+      content: url("/assets/img/button_previous.png");
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 48%;
+      left: -65px;
+      z-index: 0;
+    }
+
+    &::after{
+      content: url("/assets/img/button_next.png");
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 48%;
+      right: -50px;
+      z-index: 0;
+    }
+  }
+
+  &__image{
+    max-width: 30vw;
+  }
+
+
+  &__button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  &__button_previous{
+    top: 50%;
+    left:  -70px;
+    transform: translateY(-50%);
+  }
+
+  &__button_next{
+    top: 50%;
+    right: -70px;
+    transform: translateY(-50%);
+  }
+}
+
+@include mobile{
+  .carousel{
+    height: 300px;
+    &__button_previous{
+      top: 52%;
+      left:  -70px;
+      transform: translateY(-50%);
+    }
+
+    &__button_next{
+      top: 52%;
+      right: -70px;
+      transform: translateY(-50%);
+    }
+  }
+}

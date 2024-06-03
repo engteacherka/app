@@ -1,0 +1,20 @@
+<div class="carousel">
+  <div class="container">
+    <h2 class="carousel__heading">Відгуки</h2>
+
+
+    <div class="carousel-box">
+
+      <div class="slide" [@fade]="fadeAnimationState">
+        <img [src]="getSlideSrc(activeSlideId)" alt="" class="carousel__image" >
+      </div>
+      <div class="slide" [@fade]="fadeAnimationState">
+        <img [src]="getSlideSrc(activeSlideId + 1)" alt="" class="carousel__image">
+      </div>
+
+      <button type="button" (click)="navigate('prev')" class="carousel__button carousel__button_previous "></button>
+      <button type="button" (click)="navigate('next')" class="carousel__button carousel__button_next"></button>
+    </div>
+
+  </div>
+</div>
